@@ -28,6 +28,29 @@ def json_load():
         }
     return phonebook
 
+
+def load_help():
+    help_data = {
+        "operations": [
+            {"command": "/add", "description": "Добавить новый контакт в справочник."},
+            {"command": "/change", "description": "Изменить существующий контакт в справочнике."},
+            {"command": "/delete", "description": "Удалить контакт из справочника."},
+            {"command": "/search", "description": "Поиск контакта в справочнике по имени."},
+            {"command": "/show", "description": "Показать все контакты в справочнике."},
+            {"command": "/save", "description": "Сохранить справочник в файл."},
+            {"command": "/help", "description": "Показать список доступных команд."},
+            {"command": "/stop", "description": "Завершить выполнение программы."}
+        ]
+    }
+
+    file_path = "help_data.json"
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            contacts = json.load(file)
+        print(contacts)
+    except FileNotFoundError:
+        print("Файл с данными не найден.")
+
 def save():
     with open("data_file.json", "w", encoding="utf-8") as fh:
         fh.write(json.dumps(phonebook, ensure_ascii=False))
@@ -81,7 +104,7 @@ phonebook = json_load()
 while True:
     command = input("Введите команду: ")
     if command == "/help":
-        print("Список команд: ... ")
+        load_help()
     elif command == "/show":
         print(phonebook)
     elif command=="/add":
