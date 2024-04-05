@@ -1,0 +1,9 @@
+{"operations": [
+    {"command": "/add", "description": "Добавить новый контакт в справочник."}, 
+    {"command": "/change", "description": "Изменить существующий контакт в справочнике."},
+    {"command": "/delete", "description": "Удалить контакт из справочника."}, 
+    {"command": "/search", "description": "Поиск контакта в справочнике по имени."}, 
+    {"command": "/show", "description": "Показать все контакты в справочнике."}, 
+    {"command": "/save", "description": "Сохранить справочник в файл."}, 
+    {"command": "/help", "description": "Показать список доступных команд."}, 
+    {"command": "/stop", "description": "Завершить выполнение программы."}]}
